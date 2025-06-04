@@ -53,10 +53,10 @@ You'll also need a **Page Access Token**. You can obtain a short-lived user acce
 
 ## Installation
 
-Simply download the provided Python code and save it. For instance, you could place it in a file named `fb_uploader.py` inside a folder called `uv_app`. Your project structure would look something like this:
+Simply download the provided Python code and save it. For instance, you could place it in a file named `upload.py` inside a folder called `fb_uploader`. Your project structure would look something like this:
 
 ```
-your_project/
+folder/
 ├── fb_uploader/
 │   └── upload.py
 └── (other files)
