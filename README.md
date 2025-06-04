@@ -5,7 +5,6 @@ This service offers a straightforward way to upload videos to your Facebook Page
 ## Table of Contents
 
 * [Features](#features)
-* [Prerequisites](#prerequisites)
 * [Facebook App Setup](#facebook-app-setup)
 * [Installation](#installation)
 * [Usage](#usage)
@@ -25,16 +24,6 @@ This service offers a straightforward way to upload videos to your Facebook Page
 * **Flexible Scheduling:** Choose to publish your videos instantly or schedule them for a future date and time.
 * **Token Longevity:** Convert temporary user access tokens into long-lived ones, saving you from frequent renewals.
 * **FastAPI Powered:** Built on FastAPI, ensuring a swift and efficient API experience.
-
----
-
-## Prerequisites
-
-Before diving in, make sure you have **Python 3.7+** installed. This service relies on a few Python libraries, which you can install with `pip`:
-
-```bash
-pip install uvicorn fastapi requests python-multipart
-```
 
 ---
 
