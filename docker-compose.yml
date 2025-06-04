@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  fb-uploader:
+    build: .
+    container_name: fb_uploader_api
+    ports:
+      - "8000:8000"
+    # Comment out volumes for now to avoid overwriting installed packages
+    # volumes:
+    #   - .:/app
+    restart: unless-stopped
+    command: ["uvicorn", "fb_uploader.upload:app", "--host", "0.0.0.0", "--port", "8000"]
+    tty: true          # <--- ADD THIS LINE: Allocates a pseudo-TTY
+    stdin_open: true   # <--- ADD THIS LINE: Keeps STDIN open even if not attached

@@ -1,0 +1,61 @@
+[project]
+name = "fb_uploader"
+version = "0.1.0"
+description = "Facebook video uploader"
+readme = "README.md"
+requires-python = "~=3.11"
+dependencies = [
+    "fastapi>=0.115.12",
+    "python-multipart>=0.0.20",
+    "requests>=2.32.3",
+    "tqdm>=4.67.1",
+    "uvicorn>=0.34.3",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+
+
+[tool.poe.tasks]
+test = "uv run pytest tests"
+lint = "uv run ruff check src tests *.py --fix"
+format = "uv run ruff format src tests *.py"
+isort = "uv run ruff check src tests *.py --select I --fix-only"
+x = ["lint", "format", "isort"]
+
+[dependency-groups]
+dev = [
+    "poethepoet>=0.32.2",
+    "python-dotenv>=1.0.1",
+    "ruff>=0.9.7",
+]
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+  "ANN002",  # Missing type annotation for args
+  "ANN003",  # Missing type annotation for kwarg
+  "ANN401",  # Dynamic type annotations
+  "COM812",  # Missing trailing comma
+  "D100",    # Missing docstring in public module
+  "D101",    # Missing docstring in public class (for obvious classes)
+  "D103",    # Missing docstring in public function (for obvious functions)
+  "D104",    # Missing docstring in public package
+  "FBT001",  # Bool use in arg
+  "FBT002",  # Default bool use in arg
+  "G004",    # Logging with f-strings
+  "INP001",  # Missing __init__.py in package
+  "PLR0913", # Too many arguments (ignored if default args are used)
+  "S101",    # Use of assert
+  "SLF001",  # Access to a private member (for tests only)
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.flake8-quotes]
+docstring-quotes = "double"
+inline-quotes = "double"
+multiline-quotes = "double"
