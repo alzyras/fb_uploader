@@ -68,8 +68,8 @@ Simply download the provided Python code and save it. For instance, you could pl
 
 ```
 your_project/
-├── uv_app/
-│   └── fb_uploader.py
+├── fb_uploader/
+│   └── upload.py
 └── (other files)
 ```
 
